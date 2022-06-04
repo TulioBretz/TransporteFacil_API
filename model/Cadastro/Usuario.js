@@ -41,10 +41,10 @@ let Usuario = new Schema({
     uf: {
         type: String
     },
-    isMotorista: {
-        type: Boolean
-    },
     senha: {
+        type: String
+    },
+    codigoMotorista: {
         type: String
     },
     codigoEscolar: {

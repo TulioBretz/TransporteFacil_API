@@ -19,29 +19,24 @@ routes.route('/login/:cpf/:senha').get((req, res, next) => {
 });
 
 // Verifica o código fornecido pelo aluno e ingressa em um escolar
-routes.route('/ingressar/:codigoEscolar/:alunoId').get((req, res, next) => {
-    MotoristaModel.find({ codigo: req.params.codigoEscolar }, (error, data) => {
+routes.route('/ingressar/:codigoMotorista/:alunoId').get((req, res, next) => {
+    UsuarioModel.find({ codigoMotorista: req.params.codigoMotorista }, (error, data) => {
         if (error) {
             return next(error)
         } else {
             if (data[0]) {  // Caso o código fornecido seja válido
-                UsuarioModel.findByIdAndUpdate(req.params.alunoId, { codigoEscolar: codigoEscolar }, (error, data) => {
+
+                const filter = { id: req.params.alunoId };
+                const update = { codigoEscolar: req.params.codigoMotorista };
+                
+                UsuarioModel.updateOne(filter, update, (error, data) => {
                     if (error) {
                         return next(error);
-                    } else {
-                        console.log(data, 'DATA');
-                        // res.json(data)
-                        // console.log('Song successfully updated!')
                     }
                 })
             }
             res.json(data)
         }
-
-        // else if (res.json(data)){
-        //     console.log(res.json(data));
-        //     res.json(data)
-        // }
     })
 });
 
