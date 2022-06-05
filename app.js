@@ -5,9 +5,6 @@ let express = require('express'),
   bodyParser = require('body-parser'),
   dataBaseConfig = require('./database/db');
 
-// Import the ws module as a variable called WebSocketServer.
-var WebSocketServer = require('ws').Server;
-
 //http = require('http');
 
 const createError = require('http-errors');
