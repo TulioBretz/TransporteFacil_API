@@ -67,9 +67,6 @@ app.listen(port, () => {
   console.log('PORT Connected on: ' + port)
 })
 
-// // Create a new WebSocketServer running on port 7007.
-// var wss = new WebSocketServer({port: 7007});
-
 // Find 404 and hand over to error handler
 app.use((req, res, next) => {
   next(createError('Falha interna. Por favor, tente novamente.'));
