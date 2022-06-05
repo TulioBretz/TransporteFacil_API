@@ -9,7 +9,6 @@ let express = require('express'),
 
 const createError = require('http-errors');
 const uri = 'mongodb+srv://tuliobretz:kR8RGNYUZDdSFEKq@transportefacilcluster.fn82t.mongodb.net/?retryWrites=true&w=majority';
-
 //const uri = 'mongodb://localhost:27017/transportefacil_db'
 
 // Connecting mongoDB
