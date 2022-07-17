@@ -50,7 +50,8 @@ let Usuario = new Schema({
     codigoEscolar: {
         type: String
     },
-}, {
+},
+{
     collection: 'usuario'
 });
 

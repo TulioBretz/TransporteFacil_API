@@ -71,19 +71,20 @@ routes.route('/aluno').post((req, res, next) => {
         if (error) {
             return next(error)
         } else {
-            AlunoModel.create(req.body.dadosMotorista, (error, data) => {
-                if (error) {
-                    return next(error)
-                } else {
-                    InstituicaoModel.create(req.body.dadosMotorista.dadosVeiculo, (error, data) => {
-                        if (error) {
-                            return next(error)
-                        } else {
-                            res.json(data)
-                        }
-                    })
-                }
-            })
+            res.json(data)
+            // AlunoModel.create(req.body.dadosUsuario, (error, data) => {
+            //     if (error) {
+            //         return next(error)
+            //     } else {
+            //         InstituicaoModel.create(req.body.dadosMotorista.dadosVeiculo, (error, data) => {
+            //             if (error) {
+            //                 return next(error)
+            //             } else {
+            //                 res.json(data)
+            //             }
+            //         })
+            //     }
+            // })
         }
     })
 });

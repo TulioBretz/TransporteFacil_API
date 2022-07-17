@@ -8,22 +8,11 @@ let express = require('express'),
 //http = require('http');
 
 const createError = require('http-errors');
-const uri = 'mongodb+srv://tuliobretz:kR8RGNYUZDdSFEKq@transportefacilcluster.fn82t.mongodb.net/?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://tuliobretz-pucminas:3ievet4DBdT5kmyW@transportefacilcluster.rose2.mongodb.net/?retryWrites=true&w=majority';
 //const uri = 'mongodb://localhost:27017/transportefacil_db'
 
 // Connecting mongoDB
 mongoose.Promise = global.Promise;
-// mongoose.connect(dataBaseConfig.db, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-//   useFindAndModify: true
-// }).then(() => {
-//       console.log('Database connected sucessfully ')
-//     },
-//     error => {
-//       console.log('Could not connected to database : ' + error)
-//     }
-// )
 
 mongoose
   .connect(uri, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
