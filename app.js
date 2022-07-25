@@ -24,6 +24,8 @@ const usuariosRoute = require('./routes/usuarios.routes');
 const motoristasRoute = require('./routes/motoristas.routes');
 const chatRoute = require('./routes/chat.routes');
 const gastosRoute = require('./routes/gastos.routes');
+const alunosRoute = require('./routes/alunos.routes');
+
 
 const app = express();
 
@@ -45,6 +47,7 @@ app.use('/api/motoristas', motoristasRoute);
 app.use('/api/usuarios', usuariosRoute);
 app.use('/api/chat', chatRoute);
 app.use('/api/gastos', gastosRoute);
+app.use('/api/alunos', alunosRoute)
 
 // PORT
 const port = process.env.PORT || 3000;

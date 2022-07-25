@@ -28,7 +28,7 @@ routes.route('/ingressar/:codigoMotorista/:alunoId').get((req, res, next) => {
 
                 const filter = { id: req.params.alunoId };
                 const update = { codigoEscolar: req.params.codigoMotorista };
-                
+
                 UsuarioModel.updateOne(filter, update, (error, data) => {
                     if (error) {
                         return next(error);
@@ -66,7 +66,6 @@ routes.route('/motorista').post((req, res, next) => {
 
 // Cadastrar usuário aluno
 routes.route('/aluno').post((req, res, next) => {
-    console.log(req.body);
     UsuarioModel.create(req.body.dadosUsuario, (error, data) => {
         if (error) {
             return next(error)
@@ -85,6 +84,36 @@ routes.route('/aluno').post((req, res, next) => {
             //         })
             //     }
             // })
+        }
+    })
+});
+
+// Alterar dados pessoais usuário
+routes.route('/alterardados').put((req, res, next) => {
+
+    const filter = { id: req.body.id };
+
+    UsuarioModel.updateOne(filter, req.body, (error, data) => {
+        if (error) {
+            return next(error);
+        }
+        else {
+            res.json(data);
+        }
+    })
+});
+
+// Alterar dados de endereço do usuário
+routes.route('/alterarendereco').put((req, res, next) => {
+
+    const filter = { id: req.body.id };
+
+    UsuarioModel.updateOne(filter, req.body, (error, data) => {
+        if (error) {
+            return next(error);
+        }
+        else {
+            res.json(data);
         }
     })
 });
