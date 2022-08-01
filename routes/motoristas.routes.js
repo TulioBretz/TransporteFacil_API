@@ -6,6 +6,7 @@ let NotificacaoModel = require('../model/usuarios/Notificar');
 let UsuarioModel = require('../model/Cadastro/Usuario');
 let VeiculoModel = require('../model/Cadastro/Veiculo');
 let LoginModel = require('../model/Login');
+let MuralMotoristasModel = require('../model/MuralMotoristas');
 
 // Obtém a lista de motoristas
 // usuariosRoutes.route('/motoristas').get((req, res, next) => {
@@ -37,5 +38,16 @@ routes.route('/motorista/:codigoMotorista').get((req, res, next) => {
         }
     })
 });
+
+routes.route('/mural').get((req, res, next) => {
+    MuralMotoristasModel.find({}
+     ,(error, data) => {
+         if (error) {
+             return next(error)
+         } else {
+             res.json(data)
+         }
+     })
+ });
 
 module.exports = routes;

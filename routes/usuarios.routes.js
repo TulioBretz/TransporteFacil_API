@@ -118,4 +118,19 @@ routes.route('/alterarendereco').put((req, res, next) => {
     })
 });
 
+// Alterar dados de senha do usuário
+routes.route('/alterarsenha').put((req, res, next) => {
+
+    const filter = { id: req.body.id };
+
+    UsuarioModel.updateOne(filter, req.body, (error, data) => {
+        if (error) {
+            return next(error);
+        }
+        else {
+            res.json(data);
+        }
+    })
+});
+
 module.exports = routes;
