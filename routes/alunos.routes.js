@@ -23,8 +23,6 @@ routes.route('/desvincular').put((req, res, next) => {
 
     const filter = { id: req.body.id };
     const update = { codigoEscolar: null };
-
-    console.log(req.body);
     
     UsuarioModel.updateOne(filter, update, (error, data) => {
         if (error) {

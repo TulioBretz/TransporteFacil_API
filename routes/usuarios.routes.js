@@ -42,7 +42,6 @@ routes.route('/ingressar/:codigoMotorista/:alunoId').get((req, res, next) => {
 
 // Cadastrar usuário motorista
 routes.route('/motorista').post((req, res, next) => {
-    console.log(req.body)
     UsuarioModel.create(req.body.dadosUsuario, (error, dataUsuario) => {
         if (error) {
             return next(error)
