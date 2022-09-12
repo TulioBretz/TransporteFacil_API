@@ -19,11 +19,8 @@ mongoose
   .then(() => console.log('Database Connected'))
   .catch(err => console.log(err));
 
-const songRoute = require('./routes/routes');
 const usuariosRoute = require('./routes/usuarios.routes');
 const motoristasRoute = require('./routes/motoristas.routes');
-const chatRoute = require('./routes/chat.routes');
-const gastosRoute = require('./routes/gastos.routes');
 const alunosRoute = require('./routes/alunos.routes');
 const gruposRoute = require('./routes/grupos.routes');
 
@@ -42,11 +39,8 @@ app.use(bodyParser.urlencoded({
 app.use(cors());
 
 // RESTful API root
-app.use('/api', songRoute);
 app.use('/api/motoristas', motoristasRoute);
 app.use('/api/usuarios', usuariosRoute);
-app.use('/api/chat', chatRoute);
-app.use('/api/gastos', gastosRoute);
 app.use('/api/alunos', alunosRoute);
 app.use('/api/grupos', gruposRoute);
 

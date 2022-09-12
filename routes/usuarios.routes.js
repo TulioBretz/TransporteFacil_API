@@ -42,20 +42,18 @@ routes.route('/ingressar/:codigoMotorista/:alunoId').get((req, res, next) => {
 
 // Cadastrar usuário motorista
 routes.route('/motorista').post((req, res, next) => {
-    console.log(req.body);
-    UsuarioModel.create(req.body.dadosUsuario, (error, data) => {
+    console.log(req.body)
+    UsuarioModel.create(req.body.dadosUsuario, (error, dataUsuario) => {
         if (error) {
             return next(error)
         } else {
-            MotoristaModel.create(req.body.dadosMotorista, (error, data) => {
+            MotoristaModel.create(req.body.dadosMotorista, (error, dataMotorista) => {
                 if (error) {
                     return next(error)
                 } else {
-                    VeiculoModel.create(req.body.dadosMotorista.dadosVeiculo, (error, data) => {
+                    VeiculoModel.create(req.body.dadosMotorista.dadosVeiculo, (error, dataVeiculo) => {
                         if (error) {
                             return next(error)
-                        } else {
-                            res.json(data)
                         }
                     })
                 }
@@ -71,19 +69,6 @@ routes.route('/aluno').post((req, res, next) => {
             return next(error)
         } else {
             res.json(data)
-            // AlunoModel.create(req.body.dadosUsuario, (error, data) => {
-            //     if (error) {
-            //         return next(error)
-            //     } else {
-            //         InstituicaoModel.create(req.body.dadosMotorista.dadosVeiculo, (error, data) => {
-            //             if (error) {
-            //                 return next(error)
-            //             } else {
-            //                 res.json(data)
-            //             }
-            //         })
-            //     }
-            // })
         }
     })
 });

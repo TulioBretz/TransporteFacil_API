@@ -2,16 +2,22 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 let MuralMotoristas = new Schema({
-    nomeMotorista: {
+    locaisAtendimento: {
         type: String
     },
-    descricao: {
+    motoristaId: {
         type: String
     },
-    locais: {
+    motoristaNome: {
         type: String
     },
-    locais: {
+    motoristaTelefone: {
+        type: String
+    },
+    motoristaEmail: {
+        type: String
+    },
+    motoristaTipoVeiculo: {
         type: String
     }
 }, {
