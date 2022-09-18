@@ -1,8 +1,8 @@
 const express = require('express');
 const routes = express.Router();
 
-let MoradoresModel = require('../model/usuarios/Moradores');
-let NotificacaoModel = require('../model/usuarios/Notificar');
+let MoradoresModel = require('../model/Usuarios/Moradores');
+let NotificacaoModel = require('../model/Usuarios/Notificar');
 let UsuarioModel = require('../model/Cadastro/Usuario');
 let VeiculoModel = require('../model/Cadastro/Veiculo');
 let LoginModel = require('../model/Login');

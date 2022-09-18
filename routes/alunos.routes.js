@@ -1,11 +1,7 @@
 const express = require('express');
 const routes = express.Router();
 
-let MoradoresModel = require('../model/usuarios/Moradores');
-let NotificacaoModel = require('../model/usuarios/Notificar');
 let UsuarioModel = require('../model/Cadastro/Usuario');
-let VeiculoModel = require('../model/Cadastro/Veiculo');
-let LoginModel = require('../model/Login');
 
 // Obtém a lista de alunos ingressados no escolar
 routes.route('/ingressados/:codigoEscolar').get((req, res, next) => {
