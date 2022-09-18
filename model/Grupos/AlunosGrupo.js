@@ -15,7 +15,7 @@ let AlunosGrupoResposta = new Schema({
         type: String
     }
 }, {
-    collection: 'alunos_grupo'
+    collection: 'Alunos_Grupos'
 });
 
 module.exports = mongoose.model('AlunosGrupoResposta', AlunosGrupoResposta);

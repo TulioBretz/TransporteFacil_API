@@ -5,6 +5,7 @@ const routes = express.Router();
 let MotoristaModel = require('../model/Cadastro/Motorista');
 let UsuarioModel = require('../model/Cadastro/Usuario');
 let VeiculoModel = require('../model/Cadastro/Veiculo');
+let InstituicaoModel = require('../model/Cadastro/Instituicao');
 
 
 // Login
@@ -67,7 +68,13 @@ routes.route('/aluno').post((req, res, next) => {
         if (error) {
             return next(error)
         } else {
-            res.json(data)
+            InstituicaoModel.create(req.body.dadosInstituicao, (error, data) => {
+                if (error) {
+                    return next(error)
+                } else {
+                    res.json(data)
+                }
+            })
         }
     })
 });

@@ -21,7 +21,7 @@ let MuralMotoristas = new Schema({
         type: String
     }
 }, {
-    collection: 'mural-motoristas'
+    collection: 'Mural_Motoristas'
 });
 
 module.exports = mongoose.model('MuralMotoristas', MuralMotoristas);

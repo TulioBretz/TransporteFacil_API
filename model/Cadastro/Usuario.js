@@ -52,7 +52,7 @@ let Usuario = new Schema({
     },
 },
 {
-    collection: 'usuario'
+    collection: 'Usuarios'
 });
 
 module.exports = mongoose.model('Usuario', Usuario);

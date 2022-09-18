@@ -1,17 +1,14 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-let GrupoResposta = new Schema({
-    id: {
+let Instituicao = new Schema({
+    alunoId: {
         type: String
     },
-    codigoMotorista: {
+    instituicaoNome: {
         type: String
     },
-    titulo: {
-        type: String
-    },
-    descricao: {
+    turno: {
         type: String
     },
     horarioDe: {
@@ -19,9 +16,9 @@ let GrupoResposta = new Schema({
     },
     horarioAte: {
         type: String
-    },
+    }
 }, {
-    collection: 'Grupos'
+    collection: 'Instituicoes'
 });
 
-module.exports = mongoose.model('GrupoResposta', GrupoResposta);
+module.exports = mongoose.model('Instituicao', Instituicao);

@@ -15,7 +15,7 @@ let Veiculos = new Schema({
         type: String
     }
 }, {
-    collection: 'veiculos'
+    collection: 'Veiculos'
 });
 
 module.exports = mongoose.model('Veiculos', Veiculos);
