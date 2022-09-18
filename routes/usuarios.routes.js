@@ -47,15 +47,11 @@ routes.route('/motorista').post((req, res, next) => {
         if (error) {
             return next(error)
         } else {
-            MotoristaModel.create(req.body.dadosMotorista, (error, dataMotorista) => {
+            VeiculoModel.create(req.body.dadosMotorista.dadosVeiculo, (error, dataVeiculo) => {
                 if (error) {
                     return next(error)
                 } else {
-                    VeiculoModel.create(req.body.dadosMotorista.dadosVeiculo, (error, dataVeiculo) => {
-                        if (error) {
-                            return next(error)
-                        }
-                    })
+                    res.json(dataVeiculo)
                 }
             })
         }
@@ -64,15 +60,15 @@ routes.route('/motorista').post((req, res, next) => {
 
 // Cadastrar usuário aluno
 routes.route('/aluno').post((req, res, next) => {
-    UsuarioModel.create(req.body.dadosUsuario, (error, data) => {
+    UsuarioModel.create(req.body.dadosUsuario, (error, dataUsuario) => {
         if (error) {
             return next(error)
         } else {
-            InstituicaoModel.create(req.body.dadosInstituicao, (error, data) => {
+            InstituicaoModel.create(req.body.dadosInstituicao, (error, dataInstituicao) => {
                 if (error) {
                     return next(error)
                 } else {
-                    res.json(data)
+                    res.json(dataInstituicao)
                 }
             })
         }
